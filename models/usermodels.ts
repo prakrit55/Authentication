@@ -1,4 +1,4 @@
-import { boolean } from 'joi';
+import { boolean, number } from 'joi';
 import mongoose from 'mongoose';
 
 const userschema = new mongoose.Schema({
@@ -28,11 +28,11 @@ const userschema = new mongoose.Schema({
 			type: Number,
 			select: false,
 	},
-    resetpassword: {
-        type: String,
+    resetpasswordsess: {
+        type: Number,
         select: false,
     },
-    resetpasswordtoken: {
+    resetpasswordcode: {
         type: String,
         select: false,
     },
