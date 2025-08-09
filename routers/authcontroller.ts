@@ -24,7 +24,7 @@ interface IUserRequest extends express.Request {
  * - On error, logs the error to the console.
  */
 export const signup = async (req:Request , res:Response) => {
-    const { email, password } = req.body;
+    const { email, password, role } = req.body;
     try {
         const {error} = validateSchema.validate({email, password});
         if (error){

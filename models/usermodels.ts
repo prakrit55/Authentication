@@ -28,6 +28,11 @@ const userschema = new mongoose.Schema({
 			type: Number,
 			select: false,
 	},
+    role: {
+        type: String,
+        required: true,
+        enum: ["user", "admin", "manager"],
+    },
     resetpasswordsess: {
         type: Number,
         select: false,
