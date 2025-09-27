@@ -16,9 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/auth', authrouter);
 
-const mongo = mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/mydatabase').then(() => {
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/mydatabase').then(() => {
     console.log('Connected to MongoDB');
 })
+
 
 app.get('/', (req:Request,res:Response)=>{
     res.send('Hello World!');
